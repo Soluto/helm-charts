@@ -47,7 +47,7 @@ jobs:
             - "32:25:46:eb:9c:43:c0:25:4b:62:3f:f3:50:69:65:42"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist charts/
+          command: gh-pages --add --message "[skip ci] Updates" --dist charts/
 
   helm-reindex:
     docker:
@@ -57,6 +57,7 @@ jobs:
       - run:
           name: Helm Index Update
           command: |
+            apk add --update git
             git checkout gh-pages
             helm init -c
             helm repo index . --merge index.yaml
