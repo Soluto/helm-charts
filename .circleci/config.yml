@@ -103,13 +103,28 @@ workflows:
   version: 2
   build:
     jobs:
-      - lint-scripts
-      - lint-charts
-      - install-charts
-      - helm-pack
+      - lint-scripts:
+          filters:
+            branches:
+              ignore: gh-pages
+      - lint-charts:
+          filters:
+            branches:
+              ignore: gh-pages
+      - install-charts:
+          filters:
+            branches:
+              ignore: gh-pages
+      - helm-pack:
+          filters:
+            branches:
+              ignore: gh-pages
       - helm-deploy:
           requires:
             - helm-pack
+            - lint-scripts
+            - lint-charts
+            - install-charts
           filters:
             branches:
               only: master
