@@ -1,17 +1,40 @@
 version: 2
 
 jobs:
-  # test:
-  #   docker:
-  #     - image: python:3.7
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         name: Install dependencies
-  #         command: pip install -r requirements.txt
-  #     - run:
-  #         name: Test
-  #         command: pytest
+  lint-scripts:
+    docker:
+      - image: koalaman/shellcheck-alpine
+    steps:
+      - checkout
+      - run:
+          name: lint
+          command: |
+            shellcheck -x test/e2e-kind.sh
+  lint-charts:
+    docker:
+      - image: quay.io/helmpack/chart-testing:v2.1.0
+    steps:
+      - checkout
+      - run:
+          name: lint
+          command: |
+            git remote add k8s https://github.com/Soluto/helm-charts
+            git fetch k8s master
+            ct lint --config test/ct.yaml
+  install-charts:
+    machine: true
+    environment:
+      CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
+      CHART_TESTING_TAG: v2.1.0
+      CHARTS_REPO: https://github.com/Soluto/helm-charts
+      K8S_VERSION: "v1.11.3"
+    steps:
+      - checkout
+      - run:
+          name: install
+          command: |
+            test/e2e-kind.sh
+          no_output_timeout: 3600
 
   helm-pack:
     docker:
@@ -21,11 +44,11 @@ jobs:
       - run:
           name: Helm Pack
           command: |
-            mkdir charts/ 
+            mkdir packages/ 
             helm init -c 
-            helm package kamus/ --destination charts/
+            helm package charts/kamus/ --destination packages/
       - persist_to_workspace:
-          root: charts/
+          root: packages/
           paths: 
             - "*.tgz"
 
@@ -80,10 +103,28 @@ workflows:
   version: 2
   build:
     jobs:
-      - helm-pack
+      - lint-scripts:
+          filters:
+            branches:
+              ignore: gh-pages
+      - lint-charts:
+          filters:
+            branches:
+              ignore: gh-pages
+      - install-charts:
+          filters:
+            branches:
+              ignore: gh-pages
+      - helm-pack:
+          filters:
+            branches:
+              ignore: gh-pages
       - helm-deploy:
           requires:
             - helm-pack
+            - lint-scripts
+            - lint-charts
+            - install-charts
           filters:
             branches:
               only: master
