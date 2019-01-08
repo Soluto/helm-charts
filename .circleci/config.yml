@@ -23,9 +23,9 @@ jobs:
           command: |
             mkdir charts/ 
             helm init -c 
-            helm package kamus/ --destination charts/
+            helm package charts/kamus/ --destination packages/
       - persist_to_workspace:
-          root: charts/
+          root: packages/
           paths: 
             - "*.tgz"
 
