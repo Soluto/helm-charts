@@ -17,7 +17,10 @@ jobs:
       - checkout
       - run:
           name: lint
-          command: ct lint --config test/ct.yaml
+          command: |
+            git remote add k8s https://github.com/Soluto/helm-charts
+            git fetch k8s master
+            ct lint --config test/ct.yaml
   install-charts:
     machine: true
     environment:
