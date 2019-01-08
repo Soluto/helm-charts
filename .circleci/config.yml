@@ -17,10 +17,7 @@ jobs:
       - checkout
       - run:
           name: lint
-          command: |
-            git remote add k8s https://github.com/your_git_repo/charts
-            git fetch k8s master
-            ct lint --config test/ct.yaml
+          command: ct lint --config test/ct.yaml
   install-charts:
     machine: true
     environment:
