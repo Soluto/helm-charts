@@ -54,13 +54,26 @@ jobs:
       - image: alpine/helm:2.12.0
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "32:25:46:eb:9c:43:c0:25:4b:62:3f:f3:50:69:65:42"
       - run:
-          name: Helm Index Update
+          name: Install and configure dependencies
           command: |
             apk add --update git
             git checkout gh-pages
+            git config user.email "ci-build@soluto.com"
+            git config user.name "ci-build"
+      - run:
+          name: Helm Index Update
+          command: |
             helm init -c
             helm repo index . --merge index.yaml
+      - run:
+          name: Push changes
+          command: |        
+            git commit -am "update repo index"
+            git push 
 
 workflows:
   version: 2
