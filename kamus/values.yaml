@@ -1,0 +1,35 @@
+# Default values for kamus.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+useAirbag: false
+airbag:
+  repository: soluto
+  tag: 0.8
+image:
+  version: gcp_kms
+  repository: soluto
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  annotations:
+    prometheus.io/scrape: "true"
+ingress:
+  enabled: false
+resources:
+  limits:
+    cpu: 500m
+    memory: 600Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+autoscale:
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPU: 50
+keyManagement:
+  provider: GoogleKms
+  googleKms:
+    location: europe-west2
+    keyRing: kamus-tests
+    protectionLevelP: HSM
