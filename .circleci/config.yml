@@ -64,6 +64,7 @@ jobs:
             git checkout gh-pages
             git config user.email "ci-build@soluto.com"
             git config user.name "ci-build"
+            ssh-keyscan github.com > ~/.ssh/known_hosts
       - run:
           name: Helm Index Update
           command: |
