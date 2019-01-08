@@ -49,7 +49,7 @@ jobs:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dotfiles --message "[skip ci] Updates" --dist charts/
 
-  helm-index-update:
+  helm-reindex:
     docker:
       - image: alpine/helm:2.12
     steps:
