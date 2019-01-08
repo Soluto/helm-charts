@@ -51,13 +51,14 @@ jobs:
 
   helm-reindex:
     docker:
-      - image: alpine/helm:2.12
+      - image: alpine/helm:2.12.0
     steps:
       - checkout
       - run:
           name: Helm Index Update
           command: |
             git checkout gh-pages
+            helm init -c
             helm repo index . --merge index.yaml
 
 workflows:
