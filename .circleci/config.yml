@@ -20,7 +20,10 @@ jobs:
       - checkout
       - run:
           name: Helm Pack
-          command: mkdir charts/ && helm package kamus/ --destination charts/
+          command: |
+            mkdir charts/ 
+            helm init -c 
+            helm package kamus/ --destination charts/
       - persist_to_workspace:
           root: charts/
           paths: 
