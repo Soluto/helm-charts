@@ -1,7 +1,5 @@
 remote: k8s
 target-branch: master
 chart-dirs:
-  - stable
-excluded-charts:
-  - common
+  - charts
 helm-extra-args: --timeout 800
