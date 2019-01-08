@@ -64,7 +64,10 @@ workflows:
       - helm-pack
       - helm-deploy:
           requires:
-            - helm-build
+            - helm-pack
           filters:
             branches:
               only: master
+      - helm-reindex:
+          requires:
+            - helm-deploy
