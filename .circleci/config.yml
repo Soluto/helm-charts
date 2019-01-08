@@ -1,0 +1,70 @@
+version: 2
+
+jobs:
+  # test:
+  #   docker:
+  #     - image: python:3.7
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Install dependencies
+  #         command: pip install -r requirements.txt
+  #     - run:
+  #         name: Test
+  #         command: pytest
+
+  helm-pack:
+    docker:
+      - image: alpine/helm:2.12
+    steps:
+      - checkout
+      - run:
+          name: Helm Pack
+          command: mkdir charts/ && helm package kamus/ --destination charts/
+      - persist_to_workspace:
+          root: charts/
+          paths: 
+            - "*.tgz"
+
+  helm-deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: charts/
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "ci-build@soluto.com"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "	32:25:46:eb:9c:43:c0:25:4b:62:3f:f3:50:69:65:42"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist charts/
+
+  helm-index-update:
+    docker:
+      - image: alpine/helm:2.12
+    steps:
+      - checkout
+      - run:
+          name: Helm Index Update
+          command: |
+            git checkout gh-pages
+            helm repo index . --merge index.yaml
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - helm-pack
+      - helm-deploy:
+          requires:
+            - helm-build
+          filters:
+            branches:
+              only: master
