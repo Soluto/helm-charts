@@ -15,7 +15,7 @@ jobs:
 
   helm-pack:
     docker:
-      - image: alpine/helm:2.12
+      - image: alpine/helm:2.12.0
     steps:
       - checkout
       - run:
