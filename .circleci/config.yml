@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Install and configure dependencies
           command: |
-            apk add --update git ssh
+            apk add --update git openssh
             git checkout gh-pages
             git config user.email "ci-build@soluto.com"
             git config user.name "ci-build"
