@@ -97,6 +97,7 @@ jobs:
           name: Push changes
           command: |        
             git commit -am "update repo index"
+            git pull
             git push 
 
 workflows:
