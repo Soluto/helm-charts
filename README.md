@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/Soluto/helm-charts.svg?style=svg)](https://circleci.com/gh/Soluto/helm-charts)
 
 # helm-charts
-Soluto's Helm Charts Repository. 
+Soluto's Helm Charts Repository. All the charts on this repo pass the required quality checks by helm - using [Chart Testing](https://github.com/helm/chart-testing).
 
 ## Available Charts
 * [Kamus](charts/kamus) - A GitOps, secrets encryption/decryption solution for Kubernetes.
