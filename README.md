@@ -9,7 +9,7 @@ Soluto's Helm Charts Repository. All the charts on this repo pass the required q
 ## Usage
 Add our repository to helm:
 ```
-helm repo add soluto charts.soluto.io
+helm repo add soluto https://charts.soluto.io
 ```
 Now run the following command to see all the available charts:
 ```
