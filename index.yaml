@@ -3,10 +3,10 @@ entries:
   kamus:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2019-01-08T21:38:08.657413897Z
+    created: 2019-01-09T06:53:09.036512908Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
-    digest: 08e332ba706cdbcd8168a8c137a7d93774111c061be8f9c2d57a664944320b3c
+    digest: c4a8ac21263f72502a84ff4ebd2958adea32d71c2cbec4544ffc2b520b48697f
     home: https://github.com/Soluto/Kamus
     keywords:
     - gitops
@@ -20,4 +20,4 @@ entries:
     urls:
     - kamus-0.1.0.tgz
     version: 0.1.0
-generated: 2019-01-08T21:38:08.656854193Z
+generated: 2019-01-09T06:53:09.035971738Z
