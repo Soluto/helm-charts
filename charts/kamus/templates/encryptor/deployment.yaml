@@ -21,7 +21,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configmap-encryptor.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/encryptor/configmap.yaml") . | sha256sum }}
         checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
       labels:
         app: {{ template "kamus.name" . }}

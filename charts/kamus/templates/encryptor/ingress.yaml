@@ -21,7 +21,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: kamus-encryptor
+              serviceName: {{ template "kamus.name" . }}-encryptor
               servicePort: 80
     {{- end }}
 {{- if .Values.ingress.tls -}}}}
