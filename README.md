@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Soluto/helm-charts.svg?style=svg)](https://circleci.com/gh/Soluto/helm-charts)
+
 # helm-charts
 Soluto's Helm Charts Repository. 
 
