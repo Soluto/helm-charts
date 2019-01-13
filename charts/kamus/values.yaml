@@ -28,8 +28,6 @@ autoscale:
   maxReplicas: 10
   targetCPU: 50
 keyManagement:
-  provider: GoogleKms
-  googleKms:
-    location: europe-west2
-    keyRing: kamus-tests
-    protectionLevelP: HSM
+  provider: AESKey
+  AES:
+    key: rWnWbaFutavdoeqUiVYMNJGvmjQh31qaIej/vAxJ9G0=
