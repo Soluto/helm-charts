@@ -10,8 +10,8 @@ Kamus deployment contains 2 pods, one for encryption and one for decryption. Bot
 To install the chart with the release name `my-kamus`:
 
 ```
-$ helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
-$ helm install --name my-kamus incubator/kamus
+helm repo add soluto https://charts.soluto.io
+helm install --name my-kamus soluto/kamus --version 0.1.0
 ```
 
 The chart can be customized using the following configurable parameters. Most settings affect both APIs, unless specified otherwise:
@@ -65,7 +65,7 @@ Specify parameters using `--set key=value[,key=value]` argument to `helm install
 Alternatively a YAML file that specifies the values for the parameters can be provided like this:
 
 ```bash
-$ helm install --name my-kamus -f values.yaml incubator/kamus
+helm install --name my-kamus soluto/kamus -f values.yaml
 ```
 
 Consult the [installtion guide](https://github.com/Soluto/kamus/blob/master/docs/install.md) for more details on how to configure Kamus for a production deployment.
