@@ -65,7 +65,7 @@ Specify parameters using `--set key=value[,key=value]` argument to `helm install
 Alternatively a YAML file that specifies the values for the parameters can be provided like this:
 
 ```bash
-$ helm install --name my-kafka -f values.yaml incubator/kafka
+$ helm install --name my-kamus -f values.yaml incubator/kamus
 ```
 
 Consult the [installtion guide](https://github.com/Soluto/kamus/blob/master/docs/install.md) for more details on how to configure Kamus for a production deployment.
