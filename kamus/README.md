@@ -11,7 +11,7 @@ To install the chart with the release name `my-kamus`:
 
 ```
 helm repo add soluto https://charts.soluto.io
-helm install --name my-kamus soluto/kamus --version 0.1.0
+helm install --name my-kamus soluto/kamus
 ```
 
 The chart can be customized using the following configurable parameters. Most settings affect both APIs, unless specified otherwise:
