@@ -54,7 +54,7 @@ spec:
               name: {{ template "kamus.name" . }}-encryptor
 
 
-        {{- if .Values.useAirbag -}}
+        {{ if .Values.useAirbag -}}
         - name: "airbag"
           image: {{ .Values.airbag.repository }}/airbag:{{ .Values.airbag.tag }}
           ports:
