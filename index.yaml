@@ -3,7 +3,26 @@ entries:
   kamus:
   - apiVersion: v1
     appVersion: 0.1.2.0
-    created: 2019-02-05T10:06:41.048840342Z
+    created: 2019-02-06T09:53:30.325938705Z
+    description: An open source, git-ops, zero-trust secrets encryption and decryption
+      solution for Kubernetes applications
+    digest: bf4868d0b34755b7a5d7f20f6a9a847e643fce589e95bc819f6cafa726f9604b
+    home: https://github.com/Soluto/Kamus
+    keywords:
+    - gitops
+    - secrets
+    maintainers:
+    - name: omerlh
+    - name: shaikatz
+    name: kamus
+    sources:
+    - https://github.com/Soluto/Kamus
+    urls:
+    - kamus-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: 0.1.2.0
+    created: 2019-02-06T09:53:30.325533581Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 6a2828b33b900412325aabbec9163079b7f3d6409f023a562d50f4e23dfffa27
@@ -22,7 +41,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.1.1.0
-    created: 2019-02-05T10:06:41.04848264Z
+    created: 2019-02-06T09:53:30.325158478Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 6ab2d570c77f44e7e97c5d24d8dd4b199114d59d5d42aed9a108394d1868ab2c
@@ -41,7 +60,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.1.0
-    created: 2019-02-05T10:06:41.048118249Z
+    created: 2019-02-06T09:53:30.324747992Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 1cfd983189b4822f13bd0721fa5477bb790ed123366d4f7d02752558553f1527
@@ -60,7 +79,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2019-02-05T10:06:41.047740085Z
+    created: 2019-02-06T09:53:30.32437276Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 28f3dbc38b97f55fd4555cff259dc9ac58e97cf193097c35d06278bca9f19bcd
@@ -77,4 +96,4 @@ entries:
     urls:
     - kamus-0.1.0.tgz
     version: 0.1.0
-generated: 2019-02-05T10:06:41.047222263Z
+generated: 2019-02-06T09:53:30.323840426Z
