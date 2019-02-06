@@ -1,5 +1,1 @@
-remote: k8s
-target-branch: master
-chart-dirs:
-  - charts
 helm-extra-args: --timeout 800

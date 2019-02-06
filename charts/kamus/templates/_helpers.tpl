@@ -7,12 +7,12 @@ Expand the name of the chart.
 
 {{- define "appsettings.secrets.json" }}
 {{ printf "{" }}
-{{ if .Values.keyManagement.azureKeyVault}}
+{{ if eq .Values.keyManagement.provider "AzureKeyVault"}}
 {{ printf "\n\t\"ActiveDirectory\": { " }}
 {{ printf "\t\t\"ClientSecret\": \"%s\" " .Values.keyManagement.azureKeyVault.clientSecret }}
 {{ printf "} \n"}}
 {{- end -}}
-{{ if .Values.keyManagement.AES}}
+{{ if  eq .Values.keyManagement.provider "AES"}}
 {{ printf "\"KeyManagement\": { \n\t\t\"AES\": { \"Key\": \"%s\" } }" .Values.keyManagement.AES.key }}
 {{- end -}}
 {{ printf "}" }}
