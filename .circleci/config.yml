@@ -12,22 +12,13 @@ jobs:
             shellcheck -x test/e2e-kind.sh
   lint-charts:
     docker:
-      - image: quay.io/helmpack/chart-testing:v2.1.0
+      - image: quay.io/helmpack/chart-testing:v2.2.0
     steps:
       - checkout
       - run:
-          name: lint
-          command: |
-            git remote add k8s https://github.com/Soluto/helm-charts
-            git fetch k8s master
-            ct lint --config test/ct.yaml
+          command: ct lint --config test/ct.yaml
   install-charts:
     machine: true
-    environment:
-      CHART_TESTING_IMAGE: quay.io/helmpack/chart-testing
-      CHART_TESTING_TAG: v2.1.0
-      CHARTS_REPO: https://github.com/Soluto/helm-charts
-      K8S_VERSION: "v1.11.3"
     steps:
       - checkout
       - run:
