@@ -12,7 +12,7 @@ Expand the name of the chart.
 {{ printf "\t\t\"ClientSecret\": \"%s\" " .Values.keyManagement.azureKeyVault.clientSecret }}
 {{ printf "} \n"}}
 {{- end -}}
-{{ if  eq .Values.keyManagement.provider "AES"}}
+{{ if  eq .Values.keyManagement.provider "AESKey"}}
 {{ printf "\"KeyManagement\": { \n\t\t\"AES\": { \"Key\": \"%s\" } }" .Values.keyManagement.AES.key }}
 {{- end -}}
 {{ printf "}" }}
