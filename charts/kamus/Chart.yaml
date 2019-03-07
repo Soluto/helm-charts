@@ -3,7 +3,7 @@ description: An open source, git-ops, zero-trust secrets encryption and decrypti
 name: kamus
 version: 0.1.7
 home: https://github.com/Soluto/Kamus
-appVersion: 0.1.2.0
+appVersion: 0.2.0.0
 keywords:
   - gitops
   - secrets
