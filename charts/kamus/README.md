@@ -42,7 +42,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `autoscale.minReplicas`                        | The minimum number of pods   | 2
 | `autoscale.maxReplicas`                        | The maximum number of pods   | 10 
 | `autoscale.targetCPU`                          | Scale up the numnber of pods when CPU usage is above this percentage       |   50
-| `keyManagement.provider`                        | The KMS provider (one of AES, AzureKeyVault, GoogleKms)  | AES
+| `keyManagement.provider`                        | The KMS provider (AESKey/AzureKeyVault/GoogleKms/AwsKms)  | AES
 | `keyManagement.AES.key`                         | The encryption key used by the AES provider, *ovveride for production deployments*. This value *must* kept secret            | `rWnWbaFutavdoeqUiVYMNJGvmjQh31qaIej/vAxJ9G0=`
 | `keyManagement.azureKeyVault.clientId`           | A client ID for a valid Azure Active Directory that has permissions to access the requested key vault |    
 | `keyManagement.azureKeyVault.clientSecret`          | A client secret for a valid Azure Active Directory that has permissions to access the requested key vault. This value *must* kept secret |   
@@ -54,16 +54,13 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.googleKms.keyRing`                | The name of the keyring used for encryption/decryption   |  
 | `keyManagement.googleKms.protectionLevel`                | The protection of the keys, can be either HSM or SOFTWARE   |  HSM
 | `keyManagement.googleKms.credentials`                | Base64 encoded credentials files (the JSON file that is created when creating keys for service account on google)  | 
+| `keyManagement.awsKms.key`                | User access key to use for AWS KMS authentication   |  
+| `keyManagement.awsKms.secret`                | User access secret to use for AWS KMS authentication   |  
+| `keyManagement.awsKms.region`                | AWS KMS region   | 
+| `keyManagement.awsKms.cmkPrefix`                | Prefix for the customer master keys that are created in the KMS  | 
 
-keyManagement:
-  provider: GoogleKms
-  googleKms:
-    location: europe-east2
-    keyRing: kamus-tests
-Specify parameters using `--set key=value[,key=value]` argument to `helm install`.
 
-Alternatively a YAML file that specifies the values for the parameters can be provided like this:
-
+Then use this command to install the chart:
 ```bash
 helm install --name my-kamus soluto/kamus -f values.yaml
 ```
