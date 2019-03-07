@@ -33,4 +33,9 @@ KeyManagement__GoogleKms__KeyRingName: {{ .Values.keyManagement.googleKms.keyRin
 KeyManagement__GoogleKms__ProtectionLevel: {{ default "HSM" .Values.keyManagement.googleKms.protectionLevel }}
 KeyManagement__GoogleKms__CredentialsPath:  "/home/dotnet/app/secrets/googlecloudcredentials.json"
 {{ end }}
+{{ if .Values.keyManagement.awsKms }}
+KeyManagement__AwsKms__Region: {{ default "" .Values.keyManagement.googleKms.region }}
+KeyManagement__AwsKms__Key: {{ default "" .Values.keyManagement.googleKms.key }}
+KeyManagement__AwsKms__Secret: {{ default "" .Values.keyManagement.googleKms.secret }}
+{{ end }}
 {{- end -}}}}
