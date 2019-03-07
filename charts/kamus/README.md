@@ -58,15 +58,8 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.awsKms.secret`                | User access secret to use for AWS KMS authentication   |  
 | `keyManagement.awsKms.region`                | AWS KMS region   | 
 
-keyManagement:
-  provider: GoogleKms
-  googleKms:
-    location: europe-east2
-    keyRing: kamus-tests
-Specify parameters using `--set key=value[,key=value]` argument to `helm install`.
 
-Alternatively a YAML file that specifies the values for the parameters can be provided like this:
-
+Then use this command to install the chart:
 ```bash
 helm install --name my-kamus soluto/kamus -f values.yaml
 ```
