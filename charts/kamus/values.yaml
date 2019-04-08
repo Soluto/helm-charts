@@ -7,7 +7,7 @@ airbag:
   repository: soluto
   tag: 0.8
 image:
-  version: 0.2.2.0
+  version: 0.2.4.0
   repository: soluto
   pullPolicy: IfNotPresent
 service:
