@@ -11,7 +11,7 @@ image:
   repository: soluto
   pullPolicy: IfNotPresent
 pod:
-  annotations:
+  annotations: {}
 service:
   type: ClusterIP
   annotations:
