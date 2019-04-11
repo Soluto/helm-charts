@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "kamus.name" . }}-controller
+  labels:
+    app: {{ template "kamus.name" . }}
+    component: controller
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+  replicas: 1
+  selector:
+      matchLabels:
+        app: {{ template "kamus.name" . }}
+        release: {{ .Release.Name }}
+        component: controller
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap-decryptor.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+      labels:
+        app: {{ template "kamus.name" . }}
+        release: {{ .Release.Name }}
+        component: controller
+    spec:
+      serviceAccountName: {{ template "kamus.name" . }}-controller
+      automountServiceAccountToken: true
+      containers:
+        - name: controller
+          image: {{ .Values.image.repository }}/kamus:controller-{{ .Values.image.version }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /home/dotnet/app/secrets
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 9999
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 9999
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+          envFrom:
+           - configMapRef:
+              name: {{ template "kamus.name" . }}-controller
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: {{ template "kamus.name" . }}
+      {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+      {{- end }}
