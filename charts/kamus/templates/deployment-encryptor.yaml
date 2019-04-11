@@ -23,6 +23,9 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap-encryptor.yaml") . | sha256sum }}
         checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+        {{- if .Values.pod.annotations }}
+        {{- .Values.pod.annotations | toYaml | trimSuffix "\n" | nindent 8 }}
+        {{- end }}
       labels:
         app: {{ template "kamus.name" . }}
         component: encryptor
