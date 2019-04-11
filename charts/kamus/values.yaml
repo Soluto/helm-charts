@@ -10,6 +10,8 @@ image:
   version: 0.2.4.0
   repository: soluto
   pullPolicy: IfNotPresent
+pod:
+  annotations: {}
 service:
   type: ClusterIP
   annotations:
