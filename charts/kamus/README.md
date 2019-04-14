@@ -58,7 +58,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.awsKms.secret`                | User access secret to use for AWS KMS authentication   |  
 | `keyManagement.awsKms.region`                | AWS KMS region   | 
 | `keyManagement.awsKms.cmkPrefix`                | Prefix for the customer master keys that are created in the KMS  | 
-
+| `pod.annotations`                             | Set the annotations for Kamus's pods | 
 
 Then use this command to install the chart:
 ```bash
