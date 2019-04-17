@@ -21,7 +21,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configmap-decryptor.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap-controller.yaml") . | sha256sum }}
         checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
         {{- if .Values.pod.annotations }}
         {{- .Values.pod.annotations | toYaml | trimSuffix "\n" | nindent 8 }}
