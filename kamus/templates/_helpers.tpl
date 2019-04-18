@@ -38,5 +38,8 @@ KeyManagement__AwsKms__Region: {{ default "" .Values.keyManagement.awsKms.region
 KeyManagement__AwsKms__Key: {{ default "" .Values.keyManagement.awsKms.key }}
 KeyManagement__AwsKms__Secret: {{ default "" .Values.keyManagement.awsKms.secret }}
 KeyManagement__AwsKms__CmkPrefix: {{ default "" .Values.keyManagement.awsKms.cmkPrefix }}
+{{ if .Values.keyManagement.awsKms.region }}
+AWS_REGION: {{ .Values.keyManagement.awsKms.region }}
+{{ end }}
 {{ end }}
 {{- end -}}}}
