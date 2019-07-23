@@ -31,13 +31,16 @@ ActiveDirectory__ClientId: {{ .Values.keyManagement.azureKeyVault.clientId }}
 KeyManagement__GoogleKms__Location: {{ .Values.keyManagement.googleKms.location }}
 KeyManagement__GoogleKms__KeyRingName: {{ .Values.keyManagement.googleKms.keyRing }}
 KeyManagement__GoogleKms__ProtectionLevel: {{ default "HSM" .Values.keyManagement.googleKms.protectionLevel }}
-KeyManagement__GoogleKms__CredentialsPath:  "/home/dotnet/app/secrets/googlecloudcredentials.json"
+KeyManagement__GoogleKms__RotationPeriod: {{ default "" .Values.keyManagement.googleKms.rotationPeriod }}
+KeyManagement__GoogleKms__ProjectId: {{ default "" .Values.keyManagement.googleKms.projectId }}
+GOOGLE_APPLICATION_CREDENTIALS: "/home/dotnet/app/secrets/googlecloudcredentials.json"
 {{ end }}
 {{ if .Values.keyManagement.awsKms }}
 KeyManagement__AwsKms__Region: {{ default "" .Values.keyManagement.awsKms.region }}
 KeyManagement__AwsKms__Key: {{ default "" .Values.keyManagement.awsKms.key }}
 KeyManagement__AwsKms__Secret: {{ default "" .Values.keyManagement.awsKms.secret }}
 KeyManagement__AwsKms__CmkPrefix: {{ default "" .Values.keyManagement.awsKms.cmkPrefix }}
+KeyManagement__AwsKms__AutomaticKeyRotation: {{ default "false" .Values.keyManagement.awsKms.enableAutomaticKeyRotation }}
 {{ if .Values.keyManagement.awsKms.region }}
 AWS_REGION: {{ .Values.keyManagement.awsKms.region }}
 {{ end }}
