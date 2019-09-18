@@ -59,7 +59,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.awsKms.region`                | AWS KMS region   | 
 | `keyManagement.awsKms.cmkPrefix`                | Prefix for the customer master keys that are created in the KMS  | 
 | `pod.annotations`                             | Set the annotations for Kamus's pods | 
-| `crdConersationEnabled`                       | The `CustomResourceWebhookConversion` is enabled (relevant for clusters bellow version 1.15.0 where it's enabled by default). Required for supporting conversations of CRDs objects from older to new version. |
+| `crdConersationEnabled`                       | Set to true if the `CustomResourceWebhookConversion` is enabled (relevant for clusters bellow version 1.15.0. Since Kubernetes 1.15.0 this feature is enabled by default). This is required for supporting conversations of CRDs objects from older to new version of the CRD. |
 
 Then use this command to install the chart:
 ```bash
