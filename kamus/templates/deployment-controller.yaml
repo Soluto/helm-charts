@@ -23,6 +23,7 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap-controller.yaml") . | sha256sum }}
         checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+        checksum/tls-secret: {{ include (print $.Template.BasePath "/kamussecret-crd.yaml") . | sha256sum }}
         {{- if .Values.pod.annotations }}
         {{- .Values.pod.annotations | toYaml | trimSuffix "\n" | nindent 8 }}
         {{- end }}
@@ -40,6 +41,8 @@ spec:
           volumeMounts:
             - name: secret-volume
               mountPath: /home/dotnet/app/secrets
+            - name: tls-secret-volume
+              mountPath: /home/dotnet/app/tls
           livenessProbe:
             httpGet:
               path: /healthz
@@ -57,6 +60,9 @@ spec:
         - name: secret-volume
           secret:
             secretName: {{ template "kamus.name" . }}
+        - name: tls-secret-volume
+          secret:
+            secretName: {{ include "kamus.name" . }}-controller
       {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
