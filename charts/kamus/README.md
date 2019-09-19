@@ -59,7 +59,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.awsKms.region`                | AWS KMS region   | 
 | `keyManagement.awsKms.cmkPrefix`                | Prefix for the customer master keys that are created in the KMS  | 
 | `pod.annotations`                             | Set the annotations for Kamus's pods | 
-| `crdConersationEnabled`                       | Set to true if the `CustomResourceWebhookConversion` is enabled (relevant for clusters bellow version 1.15.0. Since Kubernetes 1.15.0 this feature is enabled by default). This is required for supporting conversations of CRDs objects from older to new version of the CRD. |
+| `crdConersationEnabled`                       | See bellow, relevant if running Kamus on a cluster version bellow 1.15.0 |
 
 Then use this command to install the chart:
 ```bash
@@ -67,3 +67,6 @@ helm install --name my-kamus soluto/kamus -f values.yaml
 ```
 
 Consult the [installtion guide](https://github.com/Soluto/kamus/blob/master/docs/install.md) for more details on how to configure Kamus for a production deployment.
+
+## Multiple KamusSecrets versions
+Kamus 0.5.0 introduced a new version of the KamusSecret CRD - `v1alpha2`. The chart and the API still support the older version (`v1alpha1`) using a [conversion webhook](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/#webhook-conversion). This feature is enabled by default since Kubernetes version 1.15.0. If you run Kamus on an older version, and have the older version of the CRD you need to enable the relevant feature flag - `CustomResourceWebhookConversion`. See [Feature Gate](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) documentation for more details. 
