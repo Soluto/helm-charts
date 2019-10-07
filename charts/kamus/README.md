@@ -25,7 +25,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `airbag.authority`                             | The authority issueing the token | 
 | `airbag.audience`                              | The audience used to validate the token (`aud` claim) |
 | `airbag.issuer`                                | The issuer used to validate the token (`iss` claim) |              
-| `image.version`                                | The image of Kamus to pull. Image naming convention is `kamus:encryption-{version}` and `kamus:encryption-{version}`                        | `0.3.4.0`     
+| `image.version`                                | The image of Kamus to pull. Image naming convention is `kamus:encryption-{version}` and `kamus:encryption-{version}`                        | `0.5.2.0`     
 | `image.repository`                              | The docker repository to pull the images from                                                     | `soluto`                                        
 | `image.pullPolicy`                              | Kamus containers pull policy                                          | `IfNotPresent`                                                            
 | `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`   
@@ -59,7 +59,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.awsKms.region`                | AWS KMS region   | 
 | `keyManagement.awsKms.cmkPrefix`                | Prefix for the customer master keys that are created in the KMS  | 
 | `pod.annotations`                             | Set the annotations for Kamus's pods | 
-| `crdConersationEnabled`                       | See bellow, relevant if running Kamus on a cluster version bellow 1.15.0 |
+| `crdConersationEnabled`                       | See bellow, relevant if running Kamus on a cluster version bellow |
 
 Then use this command to install the chart:
 ```bash
