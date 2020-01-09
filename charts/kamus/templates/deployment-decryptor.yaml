@@ -58,7 +58,7 @@ spec:
       volumes:
         - name: secret-volume
           secret:
-              name: {{ .Values.keyManagement.secretName | default (include "kamus.name" .) }}
+            secretName: {{ .Values.keyManagement.secretName | default (include "kamus.name" .) }}
       {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
