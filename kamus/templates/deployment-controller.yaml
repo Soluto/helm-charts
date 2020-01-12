@@ -59,7 +59,7 @@ spec:
       volumes:
         - name: secret-volume
           secret:
-            secretName: {{ template "kamus.name" . }}
+            secretName: {{ .Values.keyManagement.secretName | default (include "kamus.name" .) }}
         - name: tls-secret-volume
           secret:
             secretName: {{ include "kamus.name" . }}-controller
