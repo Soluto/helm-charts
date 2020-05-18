@@ -45,6 +45,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.provider`                        | The KMS provider (AESKey/AzureKeyVault/GoogleKms/AwsKms)  | AES
 | `keyManagement.secretName`                        | Use pre-created secret for keyManagement |
 | `keyManagement.AES.key`                         | The encryption key used by the AES provider, *ovveride for production deployments*. This value *must* kept secret            | `rWnWbaFutavdoeqUiVYMNJGvmjQh31qaIej/vAxJ9G0=`
+| `keyManagement.AES.useKeyDerivation`            | Should the AES key be derived from the service account name            | false
 | `keyManagement.azureKeyVault.clientId`           | A client ID for a valid Azure Active Directory that has permissions to access the requested key vault |    
 | `keyManagement.azureKeyVault.clientSecret`          | A client secret for a valid Azure Active Directory that has permissions to access the requested key vault. This value *must* kept secret |   
 | `keyManagement.azureKeyVault.keyVaultName`          | The name of the KeyVault to use | 

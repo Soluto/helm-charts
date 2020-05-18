@@ -33,5 +33,6 @@ keyManagement:
   provider: AESKey
   AES:
     key: rWnWbaFutavdoeqUiVYMNJGvmjQh31qaIej/vAxJ9G0=
+    useKeyDerivation: false
 encryptor:
   automountServiceAccountToken: false
