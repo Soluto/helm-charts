@@ -46,6 +46,6 @@ AWS_REGION: {{ .Values.keyManagement.awsKms.region }}
 {{ end }}
 {{ end }}
 {{- if .Values.keyManagement.AES }}
-KeyManagement__AES__UseKeyDeriviation: {{ default false .Values.keyManagement.AES.useKeyDerivation }}
+KeyManagement__AES__UseKeyDeriviation: {{ default "false" .Values.keyManagement.AES.useKeyDerivation | quote }}
 {{- end -}}
 {{- end -}}}}
