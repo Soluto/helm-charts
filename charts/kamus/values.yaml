@@ -16,6 +16,8 @@ service:
   type: ClusterIP
   annotations:
     prometheus.io/scrape: "true"
+serviceAccount:
+  annotations: {}
 ingress:
   enabled: false
 resources:
