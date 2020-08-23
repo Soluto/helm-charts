@@ -73,3 +73,10 @@ Consult the [installtion guide](https://github.com/Soluto/kamus/blob/master/docs
 
 ## Multiple KamusSecrets versions
 Kamus 0.5.0 introduced a new version of the KamusSecret CRD - `v1alpha2`. The chart and the API still support the older version (`v1alpha1`) using a [conversion webhook](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/#webhook-conversion). This feature is enabled by default since Kubernetes version 1.15.0. If you run Kamus on an older version, and have the older version of the CRD you need to enable the relevant feature flag - `CustomResourceWebhookConversion`. See [Feature Gate](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) documentation for more details. 
+
+## Using with EKS IAM Role for service account
+In order for the deployments to be able to read the EKS token file, you'll have to pass to the values:
+```
+  securityContext:
+    fsGroup: 65534
+```
