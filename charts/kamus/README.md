@@ -25,7 +25,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `airbag.authority`                             | The authority issueing the token | 
 | `airbag.audience`                              | The audience used to validate the token (`aud` claim) |
 | `airbag.issuer`                                | The issuer used to validate the token (`iss` claim) |              
-| `image.version`                                | The image of Kamus to pull. Image naming convention is `kamus:encryption-{version}` and `kamus:encryption-{version}`                        | `0.6.7.0`     
+| `image.version`                                | The image of Kamus to pull. Image naming convention is `kamus:encryption-{version}` and `kamus:encryption-{version}`                        | `0.7.0.0`     
 | `image.repository`                              | The docker repository to pull the images from                                                     | `soluto`                                        
 | `image.pullPolicy`                              | Kamus containers pull policy                                          | `IfNotPresent`                                                            
 | `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`   
@@ -74,3 +74,10 @@ Consult the [installtion guide](https://github.com/Soluto/kamus/blob/master/docs
 
 ## Multiple KamusSecrets versions
 Kamus 0.5.0 introduced a new version of the KamusSecret CRD - `v1alpha2`. The chart and the API still support the older version (`v1alpha1`) using a [conversion webhook](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/#webhook-conversion). This feature is enabled by default since Kubernetes version 1.15.0. If you run Kamus on an older version, and have the older version of the CRD you need to enable the relevant feature flag - `CustomResourceWebhookConversion`. See [Feature Gate](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) documentation for more details. 
+
+## Using with EKS IAM Role for service account
+In order for the deployments to be able to read the EKS token file, you'll have to pass to the values:
+```
+  securityContext:
+    fsGroup: 65534
+```
