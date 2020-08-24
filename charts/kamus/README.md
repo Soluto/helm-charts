@@ -30,6 +30,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `image.pullPolicy`                              | Kamus containers pull policy                                          | `IfNotPresent`                                                            
 | `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`   
 | `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`  
+| `serviceAccount.annotations`                   | The annotations for the serviceaccount |
 | `service.annotations`                          | The annotations for the service |  `prometheus.io/scrape: "true"`
 | `ingress.enabled`                              | Enable or disable ingress for encryptor API |  `false`
 | `ingress.hosts`                                 | Array of hosts for the ingress |                 
