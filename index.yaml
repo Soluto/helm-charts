@@ -2,8 +2,28 @@ apiVersion: v1
 entries:
   kamus:
   - apiVersion: v1
+    appVersion: 0.7.1.0
+    created: 2020-08-26T06:52:32.876852979Z
+    description: An open source, git-ops, zero-trust secrets encryption and decryption
+      solution for Kubernetes applications
+    digest: f9e91227fef0eb563ab0fe0ffa0d3357cd7fe0ef80dff3996cda39f56b0d254a
+    home: https://kamus.soluto.io
+    icon: https://raw.githubusercontent.com/Soluto/kamus/master/images/logo.png
+    keywords:
+    - gitops
+    - secrets
+    maintainers:
+    - name: omerlh
+    - name: shaikatz
+    name: kamus
+    sources:
+    - https://github.com/Soluto/Kamus
+    urls:
+    - kamus-0.4.13.tgz
+    version: 0.4.13
+  - apiVersion: v1
     appVersion: 0.7.0.0
-    created: 2020-08-24T07:07:00.6414155Z
+    created: 2020-08-26T06:52:32.876310309Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 103bbd171591d61e01145aa6b1e88aa5779bece73326972c983b3cc6fd179f5a
@@ -23,7 +43,7 @@ entries:
     version: 0.4.12
   - apiVersion: v1
     appVersion: 0.7.0.0
-    created: 2020-08-24T07:07:00.640894552Z
+    created: 2020-08-26T06:52:32.875774466Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: ae5ae75a9af3c5d9b1d705499fbc624223b6ab51bebb78c6a792afec0d61df01
@@ -43,7 +63,7 @@ entries:
     version: 0.4.11
   - apiVersion: v1
     appVersion: 0.7.0.0
-    created: 2020-08-24T07:07:00.640394983Z
+    created: 2020-08-26T06:52:32.875289949Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 167337011724c7f5990715e378f4bc8e7974788d5d353eb3d25f218ad8f034c2
@@ -63,7 +83,7 @@ entries:
     version: 0.4.10
   - apiVersion: v1
     appVersion: 0.6.7.0
-    created: 2020-08-24T07:07:00.645885167Z
+    created: 2020-08-26T06:52:32.882071176Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 70b1e1782d8976c5959c60806dafb2177d88abc92058d1873e5df6f8e8a3a7b2
@@ -83,7 +103,7 @@ entries:
     version: 0.4.9
   - apiVersion: v1
     appVersion: 0.6.7.0
-    created: 2020-08-24T07:07:00.645275461Z
+    created: 2020-08-26T06:52:32.881564507Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: c9a6c71662571838cff732ca7ab6f8d9dff42bd7382b57c933885df8c7f7df9f
@@ -103,7 +123,7 @@ entries:
     version: 0.4.8
   - apiVersion: v1
     appVersion: 0.6.6.0
-    created: 2020-08-24T07:07:00.644709993Z
+    created: 2020-08-26T06:52:32.880127735Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 253903487b9d8f6192848a0698207b6545d964891371f11d20e0e2ba4f7b3482
@@ -123,7 +143,7 @@ entries:
     version: 0.4.7
   - apiVersion: v1
     appVersion: 0.6.2.0
-    created: 2020-08-24T07:07:00.64403151Z
+    created: 2020-08-26T06:52:32.879566374Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: d0b5a2e511906c8b54ed63a82215ba0d78ad9578a7f55e14226a950f8bed5329
@@ -143,7 +163,7 @@ entries:
     version: 0.4.6
   - apiVersion: v1
     appVersion: 0.6.2.0
-    created: 2020-08-24T07:07:00.643478762Z
+    created: 2020-08-26T06:52:32.879029664Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 5b8c75ff4baa04fefb4c9e0e05cb16197838666b690a0674423bc9c6cfd00bc9
@@ -163,7 +183,7 @@ entries:
     version: 0.4.5
   - apiVersion: v1
     appVersion: 0.6.1.0
-    created: 2020-08-24T07:07:00.642956683Z
+    created: 2020-08-26T06:52:32.878465578Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: a4a7bf67d3ad308c3a7432dcd7ba54b0c9807c3db3d6c439307ef78a3829989a
@@ -183,7 +203,7 @@ entries:
     version: 0.4.4
   - apiVersion: v1
     appVersion: 0.5.2.0
-    created: 2020-08-24T07:07:00.642442412Z
+    created: 2020-08-26T06:52:32.877918996Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 4ad52122bf52838f3b6642064b7d3c05f09ae73c22d0660cb9fa2d1af8593008
@@ -203,7 +223,7 @@ entries:
     version: 0.4.3
   - apiVersion: v1
     appVersion: 0.5.2.0
-    created: 2020-08-24T07:07:00.641917Z
+    created: 2020-08-26T06:52:32.877383175Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 64021c6259655a858f06870bb5b4e188cabf1640369806221fc2754206361199
@@ -223,7 +243,7 @@ entries:
     version: 0.4.2
   - apiVersion: v1
     appVersion: 0.5.1.0
-    created: 2020-08-24T07:07:00.639861089Z
+    created: 2020-08-26T06:52:32.874784333Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: db2392ecf1a2cd2c7e97214509c1216e7a7edf53f106debe31ca5a9006152760
@@ -243,7 +263,7 @@ entries:
     version: 0.4.1
   - apiVersion: v1
     appVersion: 0.5.1.0
-    created: 2020-08-24T07:07:00.639379102Z
+    created: 2020-08-26T06:52:32.874305955Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 694791a552c421c5fbbdad0f85cb123f759744892105648530bbd193291e7caa
@@ -263,7 +283,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: 0.4.5.0
-    created: 2020-08-24T07:07:00.638883181Z
+    created: 2020-08-26T06:52:32.873815616Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 11378331c7e287879743d816b63c84017a4fad3e660974291ae810a564a85aa9
@@ -283,7 +303,7 @@ entries:
     version: 0.3.1
   - apiVersion: v1
     appVersion: 0.4.0.0
-    created: 2020-08-24T07:07:00.638419519Z
+    created: 2020-08-26T06:52:32.873375326Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: edf108c3a7ea5e14904ce9fd34a5e11222adee7372e9d46135988683d240a9da
@@ -303,7 +323,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 0.3.4.0
-    created: 2020-08-24T07:07:00.637940929Z
+    created: 2020-08-26T06:52:32.872932743Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 7f3c4729f2da9ce7406ba0faf72813e6b7fa718a2ee603146a5740f855b9a58d
@@ -323,7 +343,7 @@ entries:
     version: 0.2.6
   - apiVersion: v1
     appVersion: 0.3.3.0
-    created: 2020-08-24T07:07:00.637489096Z
+    created: 2020-08-26T06:52:32.872445698Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: dc2dd2168b89baa5efa814c300ba0e0b2f879d3c2288be78d808271bc41b59e6
@@ -343,7 +363,7 @@ entries:
     version: 0.2.5
   - apiVersion: v1
     appVersion: 0.3.2.0
-    created: 2020-08-24T07:07:00.637026958Z
+    created: 2020-08-26T06:52:32.871994639Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: c7c7f62d11f7befb318df51ad3c31fbbe41bce05d4cf1b2d43fad1d8a313ef43
@@ -363,7 +383,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: 0.3.0.0
-    created: 2020-08-24T07:07:00.636572169Z
+    created: 2020-08-26T06:52:32.871526375Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: d96b745a3332c225b7c145e0fd6d96224aa9aeb99527c365158dd30be1fc1c6b
@@ -383,7 +403,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 0.3.0.0
-    created: 2020-08-24T07:07:00.636041323Z
+    created: 2020-08-26T06:52:32.871076405Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 28020d3d8c357c2cc0dca5c0ffab5467605f443085680386613ee16b346b6750
@@ -403,7 +423,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 0.3.0.0
-    created: 2020-08-24T07:07:00.634553786Z
+    created: 2020-08-26T06:52:32.870617663Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 93428f3760fc9a783af1ed28042ab1861f9967d782f4d139a36fbb3c3b7aff80
@@ -423,7 +443,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.3.0.0
-    created: 2020-08-24T07:07:00.633967469Z
+    created: 2020-08-26T06:52:32.870113598Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 7a920fd58e2f628dab1fd1bca7d3f7753a6c360ed28364153306b1a48083ce8a
@@ -443,7 +463,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.2.4.0
-    created: 2020-08-24T07:07:00.629761025Z
+    created: 2020-08-26T06:52:32.86555632Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: f87c405a6dce3158289b08ad4866d3078474d42c8aef82a31059d3359be3fbc2
@@ -463,7 +483,7 @@ entries:
     version: 0.1.11
   - apiVersion: v1
     appVersion: 0.2.4.0
-    created: 2020-08-24T07:07:00.629307532Z
+    created: 2020-08-26T06:52:32.865135735Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 8ac43d270fe5af6d4e0f6862957fc33ec572487ded725534ccceb92049c006a9
@@ -483,7 +503,7 @@ entries:
     version: 0.1.10
   - apiVersion: v1
     appVersion: 0.2.2.0
-    created: 2020-08-24T07:07:00.633382063Z
+    created: 2020-08-26T06:52:32.868876038Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 0e89e28b7311e02a7e4d164b1015fe574f2f7878ac606d65def84fb8dd1f513c
@@ -503,7 +523,7 @@ entries:
     version: 0.1.9
   - apiVersion: v1
     appVersion: 0.2.2.0
-    created: 2020-08-24T07:07:00.632851955Z
+    created: 2020-08-26T06:52:32.868397841Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 80994f90b970a74113b1217ed2c0ed0f22656046952ae959a51471d72de14840
@@ -522,7 +542,7 @@ entries:
     version: 0.1.8
   - apiVersion: v1
     appVersion: 0.2.0.0
-    created: 2020-08-24T07:07:00.632330088Z
+    created: 2020-08-26T06:52:32.867936126Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: ecc35f768f9476eef896dcf50ed563e34bc8deac222d8206c0a66eb3d7746402
@@ -541,7 +561,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: 0.1.2.0
-    created: 2020-08-24T07:07:00.631837302Z
+    created: 2020-08-26T06:52:32.867535133Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: f86a5333ec1dbd93a310b3a5581240484e55eac79735e0f3c0ba119dc6db0d19
@@ -560,7 +580,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: 0.1.2.0
-    created: 2020-08-24T07:07:00.631417182Z
+    created: 2020-08-26T06:52:32.86713804Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 017ea9c2b8e523d1c6c838396d5db2e66cefe5de5e9c9d86ebf4078a95e5d9c7
@@ -579,7 +599,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 0.1.2.0
-    created: 2020-08-24T07:07:00.631013715Z
+    created: 2020-08-26T06:52:32.866739453Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: bf4868d0b34755b7a5d7f20f6a9a847e643fce589e95bc819f6cafa726f9604b
@@ -598,7 +618,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 0.1.2.0
-    created: 2020-08-24T07:07:00.630598827Z
+    created: 2020-08-26T06:52:32.866333358Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 6a2828b33b900412325aabbec9163079b7f3d6409f023a562d50f4e23dfffa27
@@ -617,7 +637,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 0.1.1.0
-    created: 2020-08-24T07:07:00.630178996Z
+    created: 2020-08-26T06:52:32.865946783Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 6ab2d570c77f44e7e97c5d24d8dd4b199114d59d5d42aed9a108394d1868ab2c
@@ -636,7 +656,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.1.0
-    created: 2020-08-24T07:07:00.62885807Z
+    created: 2020-08-26T06:52:32.864663015Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 1cfd983189b4822f13bd0721fa5477bb790ed123366d4f7d02752558553f1527
@@ -655,7 +675,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: 2020-08-24T07:07:00.628406493Z
+    created: 2020-08-26T06:52:32.86420486Z
     description: An open source, git-ops, zero-trust secrets encryption and decryption
       solution for Kubernetes applications
     digest: 28f3dbc38b97f55fd4555cff259dc9ac58e97cf193097c35d06278bca9f19bcd
@@ -672,4 +692,4 @@ entries:
     urls:
     - kamus-0.1.0.tgz
     version: 0.1.0
-generated: 2020-08-24T07:07:00.627607975Z
+generated: 2020-08-26T06:52:32.863647054Z
