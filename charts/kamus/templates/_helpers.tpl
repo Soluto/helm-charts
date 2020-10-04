@@ -37,8 +37,12 @@ GOOGLE_APPLICATION_CREDENTIALS: "/home/dotnet/app/secrets/googlecloudcredentials
 {{ end }}
 {{- if .Values.keyManagement.awsKms }}
 KeyManagement__AwsKms__Region: {{ default "" .Values.keyManagement.awsKms.region }}
-KeyManagement__AwsKms__Key: {{ default "" .Values.keyManagement.awsKms.key }}
+{{- if .Values.keyManagement.awsKms.key }}
+KeyManagement__AwsKms__Key: {{ .Values.keyManagement.awsKms.key }}
+{{- end }}
+{{- if .Values.keyManagement.awsKms.secret }}
 KeyManagement__AwsKms__Secret: {{ default "" .Values.keyManagement.awsKms.secret }}
+{{- end }}
 KeyManagement__AwsKms__CmkPrefix: {{ default "" .Values.keyManagement.awsKms.cmkPrefix }}
 KeyManagement__AwsKms__AutomaticKeyRotation: {{ default "false" .Values.keyManagement.awsKms.enableAutomaticKeyRotation | quote }}
 {{- if .Values.keyManagement.awsKms.region }}
