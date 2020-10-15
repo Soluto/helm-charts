@@ -4,7 +4,7 @@ metadata:
   name: {{ template "kamus.name" . }}-decryptor
   labels:
     app: {{ template "kamus.name" . }}
-    component: decryptor
+    component: decryptorr
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
