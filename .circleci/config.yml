@@ -83,7 +83,7 @@ jobs:
           name: Helm Index Update
           command: |
             helm init -c
-            helm repo index . --merge ../index.yaml
+            helm repo index . --merge index.yaml
       - run:
           name: Push changes
           command: |        
