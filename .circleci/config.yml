@@ -83,7 +83,9 @@ jobs:
           name: Helm Index Update
           command: |
             helm init -c
-            helm repo index . --merge index.yaml
+            TEMP_FOLDER_NAME=temp-chart-folder
+            mkdir -p $TEMP_FOLDER_NAME && mvcd $TEMP_FOLDER_NAME
+            helm repo index . --merge ../index.yaml
       - run:
           name: Push changes
           command: |        
