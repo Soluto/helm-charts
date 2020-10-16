@@ -6,6 +6,9 @@ rules:
 - apiGroups: ["soluto.com"] # "" indicates the core API group
   resources: ["kamussecrets"]
   verbs: ["watch"]
+- apiGroups: ["soluto.com"]
+  resources: ["kamussecrets/finalizers"]
+  verbs: ["update"]
 - apiGroups: [""] # "" indicates the core API group
   resources: ["secrets"]
   verbs: ["create", "delete", "patch"]
