@@ -32,7 +32,7 @@ KeyManagement__GoogleKms__Location: {{ .Values.keyManagement.googleKms.location 
 KeyManagement__GoogleKms__KeyRingName: {{ .Values.keyManagement.googleKms.keyRing }}
 KeyManagement__GoogleKms__ProtectionLevel: {{ default "HSM" .Values.keyManagement.googleKms.protectionLevel }}
 KeyManagement__GoogleKms__RotationPeriod: {{ default "" .Values.keyManagement.googleKms.rotationPeriod }}
-KeyManagement__GoogleKms__ProjectId: {{ default "" .Values.keyManagement.googleKms.projectId }}
+KeyManagement__GoogleKms__ProjectId: {{ .Values.keyManagement.googleKms.projectId }}
 GOOGLE_APPLICATION_CREDENTIALS: "/home/dotnet/app/secrets/googlecloudcredentials.json"
 {{ end }}
 {{- if .Values.keyManagement.awsKms }}
