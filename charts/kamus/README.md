@@ -55,7 +55,9 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.azureKeyVault.maximumDataLength`                | The maximum number of bytes that can be encrypted by KeyVaults. For data in bigger size, envelope encryption is used.   |  `214` 
 | `keyManagement.googleKms.location`                | The location of the keyring used for encryption/decryption   |  
 | `keyManagement.googleKms.keyRing`                | The name of the keyring used for encryption/decryption   |  
+| `keyManagement.googleKms.projectId`                | The id of the project used for encryption/decryption  | 
 | `keyManagement.googleKms.protectionLevel`                | The protection of the keys, can be either HSM or SOFTWARE   |  HSM
+| `keyManagement.googleKms.rotationPeriod`                | The [rotation period](https://cloud.google.com/kms/docs/key-rotation) to set for the keys (optional)  | 
 | `keyManagement.googleKms.credentials`                | Base64 encoded credentials files (the JSON file that is created when creating keys for service account on google)  | 
 | `keyManagement.awsKms.key`                | User access key to use for AWS KMS authentication   |  
 | `keyManagement.awsKms.secret`                | User access secret to use for AWS KMS authentication   |  
