@@ -25,7 +25,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `airbag.authority`                             | The authority issueing the token | 
 | `airbag.audience`                              | The audience used to validate the token (`aud` claim) |
 | `airbag.issuer`                                | The issuer used to validate the token (`iss` claim) |              
-| `image.version`                                | The image of Kamus to pull. Image naming convention is `kamus:encryption-{version}` and `kamus:encryption-{version}`                        | `0.8.1.0`
+| `image.version`                                | The image of Kamus to pull. Image naming convention is `kamus:encryption-{version}` and `kamus:encryption-{version}`                        | `0.9.0.0`
 | `image.repository`                              | The docker repository to pull the images from                                                     | `soluto`                                        
 | `image.pullPolicy`                              | Kamus containers pull policy                                          | `IfNotPresent`                                                            
 | `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`   
