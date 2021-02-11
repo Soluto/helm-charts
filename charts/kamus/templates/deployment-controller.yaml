@@ -38,9 +38,6 @@ spec:
           image: {{ .Values.image.repository }}/kamus:controller-{{ .Values.image.version }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
-            - name: secret-volume
-              mountPath: /home/dotnet/app/secrets
-            - name: tls-secret-volume
               mountPath: /home/dotnet/app/tls
           livenessProbe:
             httpGet:
@@ -59,9 +56,6 @@ spec:
         - name: secret-volume
           secret:
             secretName: {{ .Values.keyManagement.secretName | default (include "kamus.name" .) }}
-        - name: tls-secret-volume
-          secret:
-            secretName: {{ include "kamus.name" . }}-controller
       {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
