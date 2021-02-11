@@ -38,7 +38,8 @@ spec:
           image: {{ .Values.image.repository }}/kamus:controller-{{ .Values.image.version }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
-              mountPath: /home/dotnet/app/tls
+            - name: secret-volume
+              mountPath: /home/dotnet/app/secrets
           livenessProbe:
             httpGet:
               path: /healthz
