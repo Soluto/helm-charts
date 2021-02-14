@@ -4,7 +4,7 @@ name: kamus
 version: 0.9.1
 home: https://kamus.soluto.io
 icon: https://raw.githubusercontent.com/Soluto/kamus/master/images/logo.png
-appVersion: 0.9.1.0
+appVersion: 0.9.0.1
 keywords:
   - gitops
   - secrets
