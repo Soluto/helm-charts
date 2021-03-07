@@ -8,7 +8,7 @@ airbag:
   tag: 0.8
 image:
   version: 0.9.0.6
-  repository: soluto
+  repository: ghcr.io/soluto
   pullPolicy: IfNotPresent
 pod:
   annotations: {}
