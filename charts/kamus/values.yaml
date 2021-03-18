@@ -40,3 +40,4 @@ encryptor:
   automountServiceAccountToken: false
 controller:
   reconciliationIntervalInSeconds: 60
+  
