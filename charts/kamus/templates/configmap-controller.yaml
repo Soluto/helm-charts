@@ -4,4 +4,4 @@ metadata:
   name: {{ template "kamus.name" . }}-controller
 data:
 {{ include "common.configurations" . | indent 2 }}
-  TLS_CERT_FOLDER: /home/dotnet/app/tls
+  Controller__ReconciliationIntervalInSeconds: {{ .Values.controller.reconciliationIntervalInSeconds | quote }}

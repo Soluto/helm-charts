@@ -65,7 +65,7 @@ The chart can be customized using the following configurable parameters. Most se
 | `keyManagement.awsKms.cmkPrefix`                | Prefix for the customer master keys that are created in the KMS  | 
 | `pod.annotations`                             | Set the annotations for Kamus's pods | 
 | `encryptor.automountServiceAccountToken`        | Whether the service account token should be mounted on the encryptor pods | `false`      
-
+| `controller.reconciliationIntervalInSeconds`        | Controller reconciliation interval in seconds | 60
 Then use this command to install the chart:
 ```bash
 helm install --name my-kamus soluto/kamus -f values.yaml
