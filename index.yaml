@@ -2,6 +2,26 @@ apiVersion: v1
 entries:
   kamus:
   - apiVersion: v1
+    appVersion: 0.9.0.7
+    created: "2021-03-18T08:52:57.853374539Z"
+    description: An open source, git-ops, zero-trust secrets encryption and decryption
+      solution for Kubernetes applications
+    digest: 4e7f94a5b9b618d1b51682e3135a7192e4e37a19914c41502bf19a5fa0ca67fc
+    home: https://kamus.soluto.io
+    icon: https://raw.githubusercontent.com/Soluto/kamus/master/images/logo.png
+    keywords:
+    - gitops
+    - secrets
+    maintainers:
+    - name: omerlh
+    - name: shaikatz
+    name: kamus
+    sources:
+    - https://github.com/Soluto/Kamus
+    urls:
+    - https://github.com/Soluto/helm-charts/releases/download/kamus-0.9.8/kamus-0.9.8.tgz
+    version: 0.9.8
+  - apiVersion: v1
     appVersion: 0.9.0.6
     created: "2021-03-07T15:38:28.145230834Z"
     description: An open source, git-ops, zero-trust secrets encryption and decryption
