@@ -5,6 +5,10 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
+{{- define "kamus.namespace" -}}
+{{- default "default" .Release.Namespace | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
 {{- define "appsettings.secrets.json" }}
 {{ printf "{" }}
 {{ if eq .Values.keyManagement.provider "AzureKeyVault"}}
