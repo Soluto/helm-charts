@@ -2,6 +2,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ template "kamus.name" . }}-encryptor
+  namespace: {{ template "kamus.namespace" . }}
   labels:
     app: {{ template "kamus.name" . }}
     component: encryptor
