@@ -1,7 +1,7 @@
 apiVersion: v2
 description: An open source, git-ops, zero-trust secrets encryption and decryption solution for Kubernetes applications
 name: kamus
-version: 0.10.0
+version: 1.0.0
 home: https://kamus.soluto.io
 icon: https://raw.githubusercontent.com/Soluto/kamus/master/images/logo.png
 appVersion: 0.9.0.7
