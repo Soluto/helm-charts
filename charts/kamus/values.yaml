@@ -14,12 +14,15 @@ pod:
   annotations: {}
 service:
   type: ClusterIP
+  name: kamus-encryptor
+  port: 80
   annotations:
     prometheus.io/scrape: "true"
 serviceAccount:
   annotations: {}
 ingress:
   enabled: false
+  #  ingressClassName: nginx
 resources:
   limits:
     cpu: 500m

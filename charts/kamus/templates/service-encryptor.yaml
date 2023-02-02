@@ -16,14 +16,14 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: 80
+    - port: {{ .Values.service.port }}
       {{- if .Values.useAirbag }}
       targetPort: 7000 
       {{- else }} 
       targetPort: 9999
       {{- end }}
       protocol: TCP
-      name: kamus-encryptor
+      name: {{ .Values.service.name }}
   selector:
     app: {{ template "kamus.name" . }}
     component: encryptor
