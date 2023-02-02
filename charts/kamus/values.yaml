@@ -22,7 +22,7 @@ serviceAccount:
   annotations: {}
 ingress:
   enabled: false
-  #  ingressClassName: nginx
+  ingressClassName: ''
 resources:
   limits:
     cpu: 500m

@@ -29,10 +29,12 @@ The chart can be customized using the following configurable parameters. Most se
 | `image.repository`                              | The docker repository to pull the images from                                                     | `ghcr.io/soluto`                                        
 | `image.pullPolicy`                              | Kamus containers pull policy                                          | `IfNotPresent`                                                            
 | `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`   
-| `service.type`                                 | The type of the service (careful, values other than `ClusterIp` expose the decryptor to the internet)                         | `ClusterIp`  
+| `service.name`                                 | The name of the service                         | `kamus-encryptor`
+| `service.port`                                 | The port of the service                         | `80`
 | `serviceAccount.annotations`                   | The annotations for the serviceaccount |
 | `service.annotations`                          | The annotations for the service |  `prometheus.io/scrape: "true"`
 | `ingress.enabled`                              | Enable or disable ingress for encryptor API |  `false`
+| `ingress.ingressClassName`                     | The `ClassName` of the `Ingress` |
 | `ingress.hosts`                                 | Array of hosts for the ingress |                 
 | `ingress.annotations`                          | The annotations for the ingress | 
 | `ingress.tls.secretName`                       | The name of the TLS secret that should be used by the ingress | 
