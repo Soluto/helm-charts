@@ -5,6 +5,40 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
+{{/*
+Return the appropriate apiVersion for ingress.
+*/}}
+{{- define "kamus.ingress.apiVersion" -}}
+  {{- if and (.Capabilities.APIVersions.Has "networking.k8s.io/v1") (semverCompare ">= 1.19-0" .Capabilities.KubeVersion.Version) -}}
+    {{- print "networking.k8s.io/v1" -}}
+  {{- else if .Capabilities.APIVersions.Has "networking.k8s.io/v1beta1" -}}
+    {{- print "networking.k8s.io/v1beta1" -}}
+  {{- else -}}
+    {{- print "extensions/v1beta1" -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*
+Return if ingress is stable.
+*/}}
+{{- define "kamus.ingress.isStable" -}}
+  {{- eq (include "kamus.ingress.apiVersion" .) "networking.k8s.io/v1" -}}
+{{- end -}}
+
+{{/*
+Return if ingress supports ingressClassName.
+*/}}
+{{- define "kamus.ingress.supportsIngressClassName" -}}
+  {{- or (eq (include "kamus.ingress.isStable" .) "true") (and (eq (include "kamus.ingress.apiVersion" .) "networking.k8s.io/v1beta1") (semverCompare ">= 1.18-0" .Capabilities.KubeVersion.Version)) -}}
+{{- end -}}
+
+{{/*
+Return if ingress supports pathType.
+*/}}
+{{- define "kamus.ingress.supportsPathType" -}}
+  {{- or (eq (include "kamus.ingress.isStable" .) "true") (and (eq (include "kamus.ingress.apiVersion" .) "networking.k8s.io/v1beta1") (semverCompare ">= 1.18-0" .Capabilities.KubeVersion.Version)) -}}
+{{- end -}}
+
 {{- define "appsettings.secrets.json" }}
 {{ printf "{" }}
 {{ if eq .Values.keyManagement.provider "AzureKeyVault"}}
