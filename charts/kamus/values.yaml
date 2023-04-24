@@ -14,8 +14,9 @@ pod:
   annotations: {}
 service:
   type: ClusterIP
-  name: kamus-encryptor
-  port: 80
+  port:
+    name: kamus-encryptor
+    value: 80
   annotations:
     prometheus.io/scrape: "true"
 serviceAccount:

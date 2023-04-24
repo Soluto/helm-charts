@@ -6,6 +6,13 @@ Expand the name of the chart.
 {{- end -}}
 
 {{/*
+Defines the name of the encryptor service
+*/}}
+{{- define "kamus.encryptor-service.name" -}}
+{{ template "kamus.name" . }}-encryptor
+{{- end -}}
+
+{{/*
 Return the appropriate apiVersion for ingress.
 */}}
 {{- define "kamus.ingress.apiVersion" -}}

@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "kamus.name" . }}-encryptor
-
+  name: {{ template "kamus.encryptor-service.name" . }}
 {{- if .Values.service.annotations }}
   annotations:
 {{ toYaml .Values.service.annotations | indent 4 }}
@@ -16,14 +15,14 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.service.port.value }}
       {{- if .Values.useAirbag }}
       targetPort: 7000 
       {{- else }} 
       targetPort: 9999
       {{- end }}
       protocol: TCP
-      name: {{ .Values.service.name }}
+      name: {{ .Values.service.port.name }}
   selector:
     app: {{ template "kamus.name" . }}
     component: encryptor

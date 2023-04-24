@@ -2,6 +2,7 @@
 {{- $ingressApiIsStable := eq (include "kamus.ingress.isStable" .) "true" -}}
 {{- $ingressSupportsIngressClassName := eq (include "kamus.ingress.supportsIngressClassName" .) "true" -}}
 {{- $ingressSupportsPathType := eq (include "kamus.ingress.supportsPathType" .) "true" -}}
+{{- $encryptorServiceName := (include "kamus.encryptor-service.name" .) -}}
 apiVersion: {{ include "kamus.ingress.apiVersion" . }}
 kind: Ingress
 metadata:
@@ -32,12 +33,12 @@ spec:
             backend:
               {{- if $ingressApiIsStable }}
               service:
-                name: {{ $.Values.service.name }}
+                name: {{ $encryptorServiceName }}
                 port:
-                  number: {{ $.Values.service.port }}
+                  name: {{ $.Values.service.port.name }}
               {{- else }}
-              serviceName: {{ $.Values.service.name }}
-              servicePort: {{ $.Values.service.port }}
+              serviceName: {{ $encryptorServiceName }}
+              servicePort: {{ $.Values.service.port.name }}
               {{- end }}
     {{- end }}
 {{ if .Values.ingress.tls }}
