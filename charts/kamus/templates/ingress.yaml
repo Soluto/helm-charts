@@ -1,9 +1,9 @@
 {{- if .Values.ingress.enabled -}}
-{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
-apiVersion: networking.k8s.io/v1beta1
-{{- else -}}
-apiVersion: extensions/v1beta1
-{{- end }}
+{{- $ingressApiIsStable := eq (include "kamus.ingress.isStable" .) "true" -}}
+{{- $ingressSupportsIngressClassName := eq (include "kamus.ingress.supportsIngressClassName" .) "true" -}}
+{{- $ingressSupportsPathType := eq (include "kamus.ingress.supportsPathType" .) "true" -}}
+{{- $encryptorServiceName := (include "kamus.encryptor-service.name" .) -}}
+apiVersion: {{ include "kamus.ingress.apiVersion" . }}
 kind: Ingress
 metadata:
   name: {{ template "kamus.name" . }}
@@ -18,15 +18,28 @@ metadata:
 {{ toYaml .Values.ingress.annotations | indent 4 }}
 {{- end }}
 spec:
+  {{- if and $ingressSupportsIngressClassName .Values.ingress.ingressClassName }}
+  ingressClassName: {{ .Values.ingress.ingressClassName }}
+  {{- end }}
   rules:
     {{- range $host := .Values.ingress.hosts }}
     - host: {{ $host }}
       http:
         paths:
           - path: /
+            {{- if $ingressSupportsPathType }}
+            pathType: Prefix
+            {{- end }}
             backend:
-              serviceName: kamus-encryptor
-              servicePort: 80
+              {{- if $ingressApiIsStable }}
+              service:
+                name: {{ $encryptorServiceName }}
+                port:
+                  name: {{ $.Values.service.port.name }}
+              {{- else }}
+              serviceName: {{ $encryptorServiceName }}
+              servicePort: {{ $.Values.service.port.name }}
+              {{- end }}
     {{- end }}
 {{ if .Values.ingress.tls }}
   tls:
@@ -34,7 +47,6 @@ spec:
     {{- range $host := .Values.ingress.hosts }}
       - {{ $host }}
     {{- end }}
-
     secretName: {{ .Values.ingress.tls.secretName }}
 {{- end -}}
 {{- end -}}
